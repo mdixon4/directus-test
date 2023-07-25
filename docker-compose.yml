@@ -1,17 +1,12 @@
-version: "3"
+version: '3'
 services:
   directus:
-    name: Directus
+    container_name: Directus
     image: directus/directus:10.4
     volumes:
-      - uploads:/directus/uploads
-    args:
-      - DB_CLIENT=pg
-      - CACHE_ENABLED=true
-      - CACHE_STORE=redis
-      - CACHE_AUTO_PURGE=true
-    ports:
-      - 8055
-
-volumes:
-  uploads:
+      - ./uploads:/directus/uploads
+    environment:
+      DB_CLIENT: pg
+      CACHE_ENABLED: true
+      CACHE_STORE: redis
+      CACHE_AUTO_PURGE: true
