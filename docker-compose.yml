@@ -5,7 +5,7 @@ services:
     image: directus/directus:10.4
     volumes:
       - uploads:/directus/uploads
-    environment:
+    args:
       - KEY="${DIRECTUS_KEY}"
       - SECRET="${DIRECTUS_SECRET}"
       - DB_CLIENT=pg
@@ -22,9 +22,3 @@ services:
 
 volumes:
   uploads:
-
-variables:
-  - id: DIRECTUS_KEY
-    name: DIRECTUS_KEY
-    label: Directus Key
-    description: ''
