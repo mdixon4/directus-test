@@ -10,17 +10,17 @@ services:
       # - database:/directus/database
       # - extensions:/directus/extensions
     environment:
-      - KEY=${DIRECTUS_KEY}
-      - SECRET=${DIRECTUS_SECRET}
+      - KEY="${DIRECTUS_KEY}"
+      - SECRET="${DIRECTUS_SECRET}"
       - DB_CLIENT=pg
-      - DB_CONNECTION_STRING=${DB_CONNECTION_STRING}
+      - DB_CONNECTION_STRING="${DB_CONNECTION_STRING}"
       - CACHE_ENABLED=true
       - CACHE_STORE=redis
-      - CACHE_REDIS=${CACHE_REDIS}
-      - ADMIN_EMAIL=${ADMIN_EMAIL}
-      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - CACHE_REDIS="${CACHE_REDIS}"
+      - ADMIN_EMAIL="${ADMIN_EMAIL}"
+      - ADMIN_PASSWORD="${ADMIN_PASSWORD}"
       - CACHE_AUTO_PURGE=true
-      - PUBLIC_URL=${PUBLIC_URL}
+      - PUBLIC_URL="${PUBLIC_URL}"
     ports:
       - 8055:8055
     
