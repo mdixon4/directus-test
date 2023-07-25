@@ -1,14 +1,10 @@
-version: 3
+version: "3"
 services:
   directus:
     name: Directus
-    depends_on:
-      - redis
     image: directus/directus:10.4
     volumes:
       - uploads:/directus/uploads
-      # - database:/directus/database
-      # - extensions:/directus/extensions
     environment:
       - KEY="${DIRECTUS_KEY}"
       - SECRET="${DIRECTUS_SECRET}"
@@ -23,11 +19,3 @@ services:
       - PUBLIC_URL="${PUBLIC_URL}"
     ports:
       - 8055:8055
-    
-  redis:
-    name: Directus Redis
-    image: redis:7-alpine
-    command: '--maxmemory 512mb --maxmemory-policy allkeys-lru --maxmemory-samples 5'
-    volumes:
-      - redis:/data
-
