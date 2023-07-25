@@ -3,7 +3,6 @@ services:
   directus:
     name: Directus
     depends_on:
-      - postgres
       - redis
     image: directus/directus:10.4
     volumes:
@@ -23,8 +22,8 @@ services:
       - CACHE_AUTO_PURGE=true
       - PUBLIC_URL=${PUBLIC_URL}
     ports:
-      - '8055'
-  
+      - 8055:8055
+    
   redis:
     name: Directus Redis
     image: redis:7-alpine
