@@ -18,4 +18,13 @@ services:
       - CACHE_AUTO_PURGE=true
       - PUBLIC_URL="${PUBLIC_URL}"
     ports:
-      - 8055:8055
+      - 8055
+
+volumes:
+  uploads:
+
+variables:
+  - id: DIRECTUS_KEY
+    name: DIRECTUS_KEY
+    label: Directus Key
+    description: ''
